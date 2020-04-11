@@ -2,15 +2,20 @@ import os
 from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+from models import setup_db, Movies, Actors, db
 
 def create_app(test_config=None):
   # create and configure the app
   app = Flask(__name__)
-  CORS(app)
+  CORS(app, resource={r"/api.*": {"origin": "*"}})
 
-'''
-GET /actors
-'''
+  @app.route('/')
+  def index():
+      return 'hello, world'
+      
+  '''
+  GET /actors
+  '''
   @app.route('/actors', methods=['GET'])
   def get_actors():
     """Retrieve all actors."""
@@ -44,9 +49,9 @@ GET /actors
       'movies': movies_format
     }), 200
 
-'''
-DELETE /actors
-'''
+  '''
+  DELETE /actors
+  '''
   @app.route('/actors/<int:actor_id>', methods=['DELETE'])
   def delete_actor(actor_id):
     """Delete an actor."""
@@ -70,7 +75,7 @@ DELETE /actors
   '''
   DELETE /movies
   '''
-  @app.route('/movies/<int:movie_id', methods=['DELETE'])
+  @app.route('/movies/<int:movie_id>', methods=['DELETE'])
   def delete_movie(movie_id):
     """Delete a movie."""
     movie = Movie.query.get(movie_id)
@@ -127,7 +132,7 @@ DELETE /actors
       if request.method != 'POST':
         abort(405)
 
-      data request.get_json()
+      data = request.get_json()
       new_title = data.get('title')
       new_release = data.get('release')
       new_actors = data.getlist('actors')
@@ -207,7 +212,56 @@ DELETE /actors
 
   return app
 
+  """Error Handling"""
+  @app.errorhandler(422)
+  def unprocessable(error):
+      return jsonify({
+          'success': False,
+          'error': 422,
+          'message': 'unprocessable'
+      }), 422
+
+  @app.errorhandler(400)
+  def bad_request(error):
+      return jsonify({
+          'success': False,
+          'error': 400,
+          'message': 'bad request'
+      }), 400
+
+
+  @app.errorhandler(405)
+  def method_not_allowed(error):
+      return jsonify({
+          'success': False,
+          'error': 405,
+          'message': 'method not allowed'
+      }), 405
+
+  @app.errorhandler(500)
+  def internal_sever_error(error):
+      return jsonify({
+          'success': False,
+          'error': 500,
+          'message': 'internal server error'
+      }), 500
+
+  @app.errorhandler(404)
+  def not_found(error):
+      return jsonify({
+          'success': False,
+          'error': 404,
+          'message': 'resource not found'
+      }), 404
+
+  @app.errorhandler(AuthError)
+  def auth_error_handler(error):
+      response = jsonify(error.error)
+      response.status_code = error.status_code
+      return response
+
+
 APP = create_app()
 
 if __name__ == '__main__':
-    APP.run(host='0.0.0.0', port=8080, debug=True)
+    APP.run(host='127.0.0.1', port=8080, debug=True)

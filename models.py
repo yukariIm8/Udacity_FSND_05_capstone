@@ -1,10 +1,11 @@
 import os
 from sqlalchemy import Column, String, Integer, create_engine
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 import json
 
 database_name = "agency"
-database_path = "postgres://{}:{}@{}/{}".format('postgres', 'postgres', 'localhost:5432', database_name)
+database_path = "postgres://umumsiroaumutk:172bca5062ebb16d10626718c623a7970cd4927d7adddc414c1307c0edaeccd8@ec2-3-211-48-92.compute-1.amazonaws.com:5432/ddu1m1p19j96k7"
 
 db = SQLAlchemy()
 
