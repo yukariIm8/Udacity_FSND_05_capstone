@@ -70,7 +70,7 @@ class Movie(db.Model):
 
     def __init__(self, title, release_date):
         self.title = title
-        self.release = release
+        self.release_date = release_date
 
     def insert(self):
         db.session.add(self)
