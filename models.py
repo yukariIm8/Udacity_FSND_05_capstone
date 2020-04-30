@@ -23,6 +23,44 @@ def setup_db(app, database_path=database_path):
     db.init_app(app)
     db.create_all()
 
+class Movie(db.Model):
+    # This Movie table uniquely lists all the movies that the agency involved. 
+    # There is a 1 to many relationships between Movie and Casting tables.
+    __tablename__ = 'Movie'
+    class Actor(db.Model):
+    # This Actor table uniquely lists all the actors who belong to the agency. 
+    # There is a 1 to many relationships between Actor and Casting tables.
+    __tablename__ = 'Actor'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(60))
+    age = db.Column(db.Integer)
+    gender = db.Column(db.String(20))
+    casting = db.relationship('Casting',backref=db.backref('Actor', lazy=True, cascade='all,delete'))
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(120))
+    release_date = db.Column(db.Date)
+    casting = db.relationship('Casting',backref=db.backref('Movie', lazy=True)
+    
+    def format(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'release_date': self.release_date,
+        }
+
+    def insert(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
 class Actor(db.Model):
     # This Actor table uniquely lists all the actors who belong to the agency. 
     # There is a 1 to many relationships between Actor and Casting tables.
@@ -34,17 +72,6 @@ class Actor(db.Model):
     gender = db.Column(db.String(20))
     casting = db.relationship('Casting',backref=db.backref('Actor', lazy=True, cascade='all,delete'))
 
-    def insert(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def update(self):
-        db.session.commit()
-
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
-        
     def format(self):
         return {
             'id': self.id,
@@ -53,16 +80,6 @@ class Actor(db.Model):
             'gender': self.gender,
         }
 
-class Movie(db.Model):
-    # This Movie table uniquely lists all the movies that the agency involved. 
-    # There is a 1 to many relationships between Movie and Casting tables.
-    __tablename__ = 'Movie'
-
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(120))
-    release_date = db.Column(db.Date)
-    casting = db.relationship('Casting',backref=db.backref('Movie', lazy=True)
-
     def insert(self):
         db.session.add(self)
         db.session.commit()
@@ -74,13 +91,6 @@ class Movie(db.Model):
         db.session.delete(self)
         db.session.commit()
 
-    def format(self):
-        return {
-            'id': self.id,
-            'title': self.title,
-            'release_date': self.release_date,
-        }
-
 class Casting(db.Model):
     # This Casting table is created for database normalization.
     __tablename__ = 'Casting'
@@ -88,6 +98,13 @@ class Casting(db.Model):
     actor_id = db.Column(db.Integer, db.ForeignKey('Actor.id',ondelete='CASCADE'))
     movie_id = db.Column(db.Integer, db.ForeignKey('Movie.id'))
 
+    def format(self):
+        return {
+            'id': self.id,
+            'actor_id': self.actor_id,
+            'movie_id': self.movie_id,
+        }
+        
     def create(self):
         db.session.add(self)
         db.session.commit()
@@ -95,10 +112,3 @@ class Casting(db.Model):
     def delete(self):
         db.session.delete(self)
         db.session.commit()
-
-    def format(self):
-        return {
-            'id': self.id,
-            'actor_id': self.actor_id,
-            'movie_id': self.movie_id,
-        }
