@@ -10,7 +10,7 @@ if not database_path:
     database_name = "agency"
     database_path = "postgres://{}:{}@{}/{}".format('postgres', 'postgres','localhost:5432', database_name)
 
-    db = SQLAlchemy()
+db = SQLAlchemy()
 
 '''
 setup_db(app)
