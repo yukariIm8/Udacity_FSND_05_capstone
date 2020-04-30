@@ -5,7 +5,10 @@ from flask_migrate import Migrate
 import json
 
 database_name = "agency"
-database_path = "postgres://umumsiroaumutk:172bca5062ebb16d10626718c623a7970cd4927d7adddc414c1307c0edaeccd8@ec2-3-211-48-92.compute-1.amazonaws.com:5432/ddu1m1p19j96k7"
+database_path = os.environ.get('DATABASE_URL')
+if not database_path:
+    database_name = "agency"
+    database_path = "postgres://{}/{}".format('localhost:5432', database_name)
 
 db = SQLAlchemy()
 
@@ -20,56 +23,21 @@ def setup_db(app, database_path=database_path):
     db.init_app(app)
     db.create_all()
 
-# Implement Movies with attributes title and release date.
-
-class Movies(db.Model):
-    __tablename__ = 'Movies'
-
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(120))
-    release = db.Column(db.DateTime())
-    actors = db.Column(db.ARRAY(db.Integer), db.ForeignKey('Actors.id'))
-
-    def __init__(self, title, release, actors):
-        self.title = title
-        self.release = release
-        self.actors = actors
-
-    def insert(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def update(self):
-        db.session.commit()
-
-    def delete(self):
-        db.session.delete(self)
-        db.session.commit()
-
-    def format(self):
-        return {
-            'id': self.id,
-            'title': self.title,
-            'release': self.release,
-            'actors': self.actors
-        }
-
-# Actors with attributes name, age and gender.
-
-class Actors(db.Model):
-    __tablename__ = 'Actors'
+class Actor(db.Model):
+    # This Actor table uniquely lists all the actors who belong to the agency. 
+    # There is a 1 to many relationships between Actor and Casting tables.
+    __tablename__ = 'Actor'
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(60))
     age = db.Column(db.Integer)
-    gender = db.Column(db.String(10))
-    movies = db.relationship('Movies', backref=db.backref('Actors', lazy=True))
+    gender = db.Column(db.String(20))
+    casting = db.relationship('Casting',backref=db.backref('Actor', lazy=True, cascade='all,delete'))
 
-    def __init__(self, name, age, gender, movies):
+    def __init__(self, name, age, gender):
         self.name = name
         self.age = age
         self.gender = gender
-        self.movies = movies
 
     def insert(self):
         db.session.add(self)
@@ -88,5 +56,62 @@ class Actors(db.Model):
             'name': self.name,
             'age': self.age,
             'gender': self.gender,
-            'movies': self.movies
+        }
+
+class Movie(db.Model):
+    # This Movie table uniquely lists all the movies that the agency involved. 
+    # There is a 1 to many relationships between Movie and Casting tables.
+    __tablename__ = 'Movie'
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(120))
+    release_date = db.Column(db.Date)
+    casting = db.relationship('Casting',backref=db.backref('Movie', lazy=True)
+
+    def __init__(self, title, release_date):
+        self.title = title
+        self.release = release
+
+    def insert(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def update(self):
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
+    def format(self):
+        return {
+            'id': self.id,
+            'title': self.title,
+            'release_date': self.release_date,
+        }
+
+class Casting(db.Model):
+    # This Casting table is created for database normalization.
+    __tablename__ = 'Casting'
+    id = db.Column(db.Integer, primary_key=True)
+    actor_id = db.Column(db.Integer, db.ForeignKey('Actor.id',ondelete='CASCADE'))
+    movie_id = db.Column(db.Integer, db.ForeignKey('Movie.id'))
+    
+    def __init__(self, actor_id, movie_id):
+        self.actor_id = actor_id
+        self.movie_id = movie_id
+
+    def create(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
+    def format(self):
+        return {
+            'id': self.id,
+            'actor_id': self.actor_id,
+            'movie_id': self.movie_id,
         }
