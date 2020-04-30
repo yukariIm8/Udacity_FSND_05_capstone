@@ -2,11 +2,12 @@ import os
 from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-from models import setup_db, Movies, Actors, db
+from models import setup_db, Movie, Actor, Casting, db
 
 def create_app(test_config=None):
   # create and configure the app
   app = Flask(__name__)
+  setup_db(app)
   CORS(app, resource={r"/api.*": {"origin": "*"}})
 
   @app.route('/')
@@ -38,7 +39,7 @@ def create_app(test_config=None):
   @app.route('/movies', methods=['GET'])
   def get_movies():
     """Retrieve all movies."""
-    movies = Movies.query.all()
+    movies = Movie.query.all()
     if movies is None:
       abort(404, 'There is no movies data.')
 

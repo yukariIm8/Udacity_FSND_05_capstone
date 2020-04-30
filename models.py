@@ -34,11 +34,6 @@ class Actor(db.Model):
     gender = db.Column(db.String(20))
     casting = db.relationship('Casting',backref=db.backref('Actor', lazy=True, cascade='all,delete'))
 
-    def __init__(self, name, age, gender):
-        self.name = name
-        self.age = age
-        self.gender = gender
-
     def insert(self):
         db.session.add(self)
         db.session.commit()
@@ -68,10 +63,6 @@ class Movie(db.Model):
     release_date = db.Column(db.Date)
     casting = db.relationship('Casting',backref=db.backref('Movie', lazy=True)
 
-    def __init__(self, title, release_date):
-        self.title = title
-        self.release_date = release_date
-
     def insert(self):
         db.session.add(self)
         db.session.commit()
@@ -96,10 +87,6 @@ class Casting(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     actor_id = db.Column(db.Integer, db.ForeignKey('Actor.id',ondelete='CASCADE'))
     movie_id = db.Column(db.Integer, db.ForeignKey('Movie.id'))
-    
-    def __init__(self, actor_id, movie_id):
-        self.actor_id = actor_id
-        self.movie_id = movie_id
 
     def create(self):
         db.session.add(self)
