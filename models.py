@@ -8,7 +8,9 @@ database_name = "agency"
 database_path = os.environ.get('DATABASE_URL')
 if not database_path:
     database_name = "agency"
-    database_path = "postgres://{}:{}@{}/{}".format('postgres', 'postgres','localhost:5432', database_name)
+    database_path = "postgres://{}:{}@{}/{}".format('postgres', 'postgres',
+                                                    'localhost:5432',
+                                                    database_name)
 
 db = SQLAlchemy()
 
@@ -21,10 +23,9 @@ setup_db(app)
 def setup_db(app, database_path=database_path):
     app.config["SQLALCHEMY_DATABASE_URI"] = database_path
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-    migrate = Migrate(app,db)
+    migrate = Migrate(app, db)
     db.app = app
     db.init_app(app)
-    #db.create_all()
 
 
 class Movie(db.Model):
@@ -35,12 +36,12 @@ class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120))
     release_date = db.Column(db.Date)
-    casting = db.relationship('Casting', backref=db.backref('Movie', lazy=True))
+    casting = db.relationship('Casting',
+                              backref=db.backref('Movie', lazy=True))
 
     def __init__(self, title, release_date):
         self.title = title
         self.release_date = release_date
-
 
     def format(self):
         return {
@@ -62,7 +63,7 @@ class Movie(db.Model):
 
 
 class Actor(db.Model):
-    # This Actor table uniquely lists all the actors who belong to the agency. 
+    # This Actor table uniquely lists all the actors who belong to the agency.
     # There is a 1 to many relationships between Actor and Casting tables.
     __tablename__ = 'Actor'
 
@@ -70,7 +71,9 @@ class Actor(db.Model):
     name = db.Column(db.String(60))
     age = db.Column(db.Integer)
     gender = db.Column(db.String(20))
-    casting = db.relationship('Casting', backref=db.backref('Actor', lazy=True, cascade='all,delete'))
+    casting = db.relationship('Casting',
+                              backref=db.backref('Actor', lazy=True,
+                                                 cascade='all,delete'))
 
     def __init__(self, name, age, gender):
         self.name = name
@@ -101,7 +104,8 @@ class Casting(db.Model):
     # This Casting table is created for database normalization.
     __tablename__ = 'Casting'
     id = db.Column(db.Integer, primary_key=True)
-    actor_id = db.Column(db.Integer, db.ForeignKey('Actor.id', ondelete='CASCADE'))
+    actor_id = db.Column(db.Integer, db.ForeignKey('Actor.id',
+                                                   ondelete='CASCADE'))
     movie_id = db.Column(db.Integer, db.ForeignKey('Movie.id'))
 
     def __init__(self):
