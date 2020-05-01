@@ -3,7 +3,6 @@ from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from models import setup_db, Movie, Actor, Casting, db
-from auth import AuthError, requires_auth
 
 def create_app(test_config=None):
     """Create and configure the app."""
@@ -18,6 +17,11 @@ def create_app(test_config=None):
         response.headers.add('Access-Contorl-Allow_Methods',
                              'GET,POST,PATCH,DELETE')
         return response
+
+    @app.route('/')
+    def hello():
+      return jsonify({'message': 'hello'})
+
 
     '''
     Movie
@@ -325,12 +329,6 @@ def create_app(test_config=None):
             'error': 500,
             'message': 'internal server error'
         }), 500
-
-    @app.errorhandler(AuthError)
-    def auth_error_handler(error):
-        response = jsonify(error.error)
-        response.status_code = error.status_code
-        return response
 
     return app
 
