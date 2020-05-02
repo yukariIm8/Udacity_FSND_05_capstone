@@ -34,8 +34,8 @@ class Movie(db.Model):
     __tablename__ = 'Movie'
 
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(120))
-    release_date = db.Column(db.Date)
+    title = db.Column(db.String(120), nullable=False)
+    release_date = db.Column(db.Date, nullable=False)
     casting = db.relationship('Casting',
                               backref=db.backref('Movie', lazy=True))
 
@@ -68,9 +68,9 @@ class Actor(db.Model):
     __tablename__ = 'Actor'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(60))
-    age = db.Column(db.Integer)
-    gender = db.Column(db.String(20))
+    name = db.Column(db.String(60), nullable=False)
+    age = db.Column(db.Integer, nullable=False)
+    gender = db.Column(db.String(20), nullable=False)
     casting = db.relationship('Casting',
                               backref=db.backref('Actor', lazy=True,
                                                  cascade='all,delete'))
@@ -108,7 +108,7 @@ class Casting(db.Model):
                                                    ondelete='CASCADE'))
     movie_id = db.Column(db.Integer, db.ForeignKey('Movie.id'))
 
-    def __init__(self):
+    def __init__(self, actor_id, movie_id):
         self.actor_id = actor_id
         self.movie_id = movie_id
 
@@ -119,10 +119,14 @@ class Casting(db.Model):
             'movie_id': self.movie_id,
         }
 
-    def create(self):
+    def insert(self):
         db.session.add(self)
+        db.session.commit()
+
+    def update(self):
         db.session.commit()
 
     def delete(self):
         db.session.delete(self)
         db.session.commit()
+
