@@ -16,8 +16,8 @@ class CastingAgencyTestCase(unittest.TestCase):
         self.client = self.app.test_client
         self.database_name = "agency_test"
         self.database_path = "postgres://{}:{}@{}/{}"\
-                            .format('postgres', 'postgres', 'localhost:5432',
-                                    self.database_name)
+            .format('postgres', 'postgres', 'localhost:5432',
+                    self.database_name)
         setup_db(self.app, self.database_path)
         db.create_all()
 
@@ -27,7 +27,7 @@ class CastingAgencyTestCase(unittest.TestCase):
             self.db.init_app(self.app)
             # create all tables
             self.db.create_all()
-    
+
         self.new_movie = {
             'title': 'The Incredible Hulk',
             'release_date': datetime.date(2008, 6, 8),
