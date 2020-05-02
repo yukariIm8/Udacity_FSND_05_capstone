@@ -220,7 +220,7 @@ def create_app(test_config=None):
 
     @app.route('/casting', methods=['POST'])
     def create_casting():
-        """Create a new actor."""
+        """Create a new casting."""
         try:
             if request.method != 'POST':
                 abort(405)
