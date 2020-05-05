@@ -3,7 +3,7 @@ from flask import Flask, request, abort, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from models import setup_db, Movie, Actor, Casting, db
-
+from auth import AuthError, requires_auth
 
 def create_app(test_config=None):
     """Create and configure the app."""
@@ -23,7 +23,8 @@ def create_app(test_config=None):
     Movie
     '''
     @app.route('/movies', methods=['GET'])
-    def get_movies():
+    @requires_auth('get:movies')
+    def get_movies(jwt):
         """Retrieve all movies."""
         movies = Movie.query.all()
 
@@ -38,7 +39,8 @@ def create_app(test_config=None):
         }), 200
 
     @app.route('/movies', methods=['POST'])
-    def create_movie():
+    @requires_auth('post:movies')
+    def create_movie(jwt):
         """Create a new movie."""
         try:
             if request.method != 'POST':
@@ -61,7 +63,8 @@ def create_app(test_config=None):
             db.session.close()
 
     @app.route('/movies/<int:movie_id>', methods=['PATCH'])
-    def update_movie(movie_id):
+    @requires_auth('patch:movies')
+    def update_movie(jwt, movie_id):
         """Update the movie's info."""
         movie = Movie.query.get(movie_id)
 
@@ -87,7 +90,8 @@ def create_app(test_config=None):
             db.session.close()
 
     @app.route('/movies/<int:movie_id>', methods=['DELETE'])
-    def delete_movie(movie_id):
+    @requires_auth('delete:movies')
+    def delete_movie(jwt, movie_id):
         """Delete a movie."""
         movie = Movie.query.get(movie_id)
 
@@ -110,7 +114,8 @@ def create_app(test_config=None):
     Actor
     '''
     @app.route('/actors', methods=['GET'])
-    def get_actors():
+    @requires_auth('get:actors')
+    def get_actors(jwt):
         """Retrieve all actors."""
         actors = Actor.query.all()
 
@@ -125,7 +130,8 @@ def create_app(test_config=None):
         }), 200
 
     @app.route('/actors', methods=['POST'])
-    def create_actor():
+    @requires_auth('post:actors')
+    def create_actor(jwt):
         """Create a new actor."""
         try:
             if request.method != 'POST':
@@ -149,7 +155,8 @@ def create_app(test_config=None):
             db.session.close()
 
     @app.route('/actors/<int:actor_id>', methods=['PATCH'])
-    def update_actor(actor_id):
+    @requires_auth('patch:actors')
+    def update_actor(jwt, actor_id):
         """Update the actor's info."""
         actor = Actor.query.get(actor_id)
 
@@ -177,7 +184,8 @@ def create_app(test_config=None):
             db.session.close()
 
     @app.route('/actors/<int:actor_id>', methods=['DELETE'])
-    def delete_actor(actor_id):
+    @requires_auth('delete:actors')
+    def delete_actor(jwt, actor_id):
         """Delete an actor."""
         actor = Actor.query.get(actor_id)
 
@@ -200,7 +208,8 @@ def create_app(test_config=None):
     Casting
     '''
     @app.route('/casting', methods=['GET'])
-    def get_casting():
+    @requires_auth('get:casting')
+    def get_casting(jwt):
         """Retrieve all casting information."""
         casting = Casting.query.all()
 
@@ -215,7 +224,8 @@ def create_app(test_config=None):
         }), 200
 
     @app.route('/casting', methods=['POST'])
-    def create_casting():
+    @requires_auth('post:casting')
+    def create_casting(jwt):
         """Create a new casting."""
         try:
             if request.method != 'POST':
@@ -238,7 +248,8 @@ def create_app(test_config=None):
             db.session.close()
 
     @app.route('/casting/<int:casting_id>', methods=['PATCH'])
-    def update_casting(casting_id):
+    @requires_auth('patch:casting')
+    def update_casting(jwt, casting_id):
         """Update the casting's info."""
         casting = Casting.query.get(casting_id)
 
@@ -264,7 +275,8 @@ def create_app(test_config=None):
             db.session.close()
 
     @app.route('/casting/<int:casting_id>', methods=['DELETE'])
-    def delete_casting(casting_id):
+    @requires_auth('delete:casting')
+    def delete_casting(jwt, casting_id):
         """Delete a casting."""
         casting = Casting.query.get(casting_id)
 
@@ -325,6 +337,12 @@ def create_app(test_config=None):
             'error': 500,
             'message': 'internal server error'
         }), 500
+
+    @app.errorhandler(AuthError)
+    def auth_error_handler(error):
+        response = jsonify(error.error)
+        response.status_code = error.status_code
+        return response
 
     return app
 
