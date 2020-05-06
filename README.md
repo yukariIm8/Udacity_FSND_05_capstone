@@ -18,6 +18,7 @@ I integrate my following skills through this capstone project.
 ## Heroku Link
 https://casting-agency-2020.herokuapp.com/
 
+## Getting Started
 ### Installing Dependencies
 
 #### Python 3.7
@@ -81,35 +82,38 @@ The Casting Agency models a company that is responsible for creating movies and 
 
 ### Roles
 Casting Assistant
-- `get:movies`
-- `get:actors`
-- `get:casting`
+- has following permissions for actions. 
+    - `get:movies`, `get:actors`, `get:casting`
 
 Casting Director
-- `get:movies`
-- `get:actors`
-- `get:casting`
-- `post:actors`
-- `post:casting`
-- `patch:movies`
-- `patch:actors`
-- `patch:casting`
-- `delete:actors`
-- `delete:casting`
+- has following permissions for actions. 
+    - `get:movies`, `get:actors`, `get:casting`
+    - `post:actors`, `post:casting`
+    - `patch:movies`, `patch:actors`, `patch:casting`
+    - `delete:actors`, `delete:casting`
 
 Executive Producer
-- `get:movies`
-- `get:actors`
-- `get:casting`
-- `post:movies`
-- `post:actors`
-- `post:casting`
-- `patch:movies`
-- `patch:actors`
-- `patch:casting`
-- `delete:actors`
-- `delete:actors`
-- `delete:casting`
+- has following permissions for actions. 
+    - `get:movies`, `get:actors`, `get:casting`
+    - `post:movies`, `post:actors`, `post:casting`
+    - `patch:movies`, `patch:actors`, `patch:casting`
+    - `delete:actors`, `delete:actors`, `delete:casting`
+
+### Authentication (bearer tokens)
+Casting Assistant
+```
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc1OTI4NCwiZXhwIjoxNTg4NzY2NDg0LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.heFxFPKRTQqH_Rv5YfuwwJbq-nIk7l2INfh3e9G9w_75jn8yJpQrBX4ApVLKXgEc0v4R-6sxNPDJX3oEe6w1AC8A5SgOXJCBEpg8S_UZOmvQD-aF7l3h2ybotYBRy9rSYQCwuKPR-Z_4guNtTVM3qWwR8Lppg78KJbfrNowbiK-kwCR9zmLrT5WLc0cj6rqsYzrQid49rxdVgd1Ds96uxdypU68r4NYfOKhgEbTgbh4wtARypDtcNEXJ4gvNqBEVtURhvI2x0mPBNgwe2eAHaQUCphUstCy6rKo4TIUVGNfE3teD9f4EXNNUfoId87w6K_YEIaDxrls_iw6e9e2q5g
+```
+
+Casting Director
+```
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc1OTQ0NSwiZXhwIjoxNTg4NzY2NjQ1LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZhWJ5-HZraGw7EVldjk0KklzHQT7x_zWs7u7g0JY-JD17UKd_pqASwDYZhFddvCgftt-gi_QaB2-Ek_jQHSvF5bj8neuDgPc-chkGwW5vY2h-ONNlkncyIlGMzNaFnKqBmRwIGw_8024lFyh2tjjDy0NpKIqSQCYF24ZpM-yddhh3uOVhN2rBgUnj2emB_ei2Mg63iM_Q4drQurxSR35ipSQnxsFXB9JZJTNaJss5COVA0a-ndL4aia0y4Jxqoe6fTDk14Apw9vikM5UR3s8m5qwPnC_JnNjlqZMjnd7pMfq9HAq2cBGXp_PlSXy-m_uiaoLSXp-8zoVpG-LpjralQ
+```
+
+Executive Producer
+```
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc1OTU5MSwiZXhwIjoxNTg4NzY2NzkxLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.J5F8-Kp7-5UXpki3Ugqi2952BAMzDb1Ca9Z-jKiEtjvETpGqWaDFYlOBEZSz2Tr9pBANO4IgcAwXE8DDI747VT5HreCQSA1KTyiDzL7c4TwLuuG_VhMlaZTXTZEegbQ8bNKRP_o-CGd86OshRJYCY9fj_P0N7IZgoLTJILj1CdR3V-7gdLSsAln_74viX6p9ifD3y3gn7nxLDm7Vu7KiJ7oBNy1cXkU5RL_-yWz2MbK_SWJBjyPmY9NMSFBn3d02qQsNiK-UkfoirQ_wS2V0gSSBe8-xlRtMmgdzLBo7-XExMI7x1zAnd4d54IyylRjnMjnPyCv6XM2VmHX7lrYVzw
+```
 
 ## Error Handling
 
