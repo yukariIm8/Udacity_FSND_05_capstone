@@ -1,0 +1,1941 @@
+{
+	"info": {
+		"_postman_id": "55cd2f2d-dcfa-41f7-a4a9-9d840ab5af5d",
+		"name": "casting-agency-2020",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Casting Assistant",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0865991f-9ecd-4b1d-a3b8-0610cd1391b8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7b8db06-13ac-4563-abc7-18ebd6fecf7a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8019983e-4a28-49ea-9cf8-5a7a7d93dac1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8388ae59-32a3-467d-a845-8b6ac4a8f251",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bfe20545-d774-48eb-8e80-df8fa8856c7b",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 50,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "540f1735-3292-4c4e-8432-62d0ac293400",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 8,\r\n    \"movie_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "14863322-66bb-4890-841c-c27102690da1",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies/5",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "885c5ce4-fbed-4913-a6b9-24796e1ca2f0",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 100,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors/5",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dc048dea-76a0-475d-8c1b-cd810c890d62",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 1,\r\n    \"movie_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting/5",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "39567371-69dc-49b5-b7f4-24ececdc55af",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies/4",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "90c0d2a0-4c15-4b64-be9e-87f81bf2517b",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors/4",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "57752126-10a5-4d9e-b79d-286ef4ae3efd",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNmMyNGY5MTA4ODViMGNhNmE3MDgwZSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0MzYyOCwiZXhwIjoxNTg4NzUwODI4LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyJdfQ.tuPNAjBEw5mMpvPJ9y4FatrfA2H80LquK4EZrgybctskVN3wKHwEFRQ7IHg9bMmn0Mt4jttcheX3eYj_4WDvsMUzDOY9iCQdJbZmQf7whnqMOrxEsiny8LbcIYzvXw9nXHqZtYJWclDJEQPCtClhes9anXgymmfvkumUrCSHIZMf33jkTz95V1XWFMcBLGiDmwqHNGrpeklOtaLJHKTSL9Ztfm22_CDcoFG3jZclv7XwM3iZ84kN9I6quYkCw5tZ5ejmQKq5r7QR1B3azrWK-AuIU6RpgUTorHB8ua9NutzV6LT4CC1fkRWo-coCHeLkZmjR1HcGNsAiTSGp9wy8Ew",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting/4",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f559fa42-f038-45ce-a44e-440c87e81270",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "6129db85-fd7d-4169-8e20-dbf4deeda4e2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Casting Director",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9f32952f-792c-42f8-b3a5-f8b480b52a80",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0c538ead-c4e9-45bb-b63d-1878b550c4d8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d04a862-08c9-474d-a45d-868defbf7773",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "17db8926-dca9-4efc-a1da-7651685af14e",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "eb4f14ae-a340-4e89-8fd7-8a9db115d66d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 50,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7398d3f4-eb40-4068-90cb-71229d813089",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 8,\r\n    \"movie_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51501d33-bf40-4c97-a52d-fe68f0bd5bfa",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies/5",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0e19dbc5-d760-4258-887a-509a564d43a8",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 100,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors/5",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "56075d5f-4c74-4586-921d-7128f5d3b148",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 1,\r\n    \"movie_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting/5",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3abd9984-0fcc-49f2-85b3-7b35aea72800",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies/4",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7ad7585d-5b12-4ad3-bd22-d94fa3e71aba",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors/4",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0942dc81-ca8d-479b-a9be-f36a9ab1344b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlYWQyMDdmNTRiMTRjMGMxMjZlNmU2MSIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzg3NiwiZXhwIjoxNTg4NzUxMDc2LCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZ2V0OmFjdG9ycyIsImdldDpjYXN0aW5nIiwiZ2V0Om1vdmllcyIsInBhdGNoOmFjdG9ycyIsInBhdGNoOmNhc3RpbmciLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyIsInBvc3Q6Y2FzdGluZyJdfQ.ZaDjtmNjudDPlxo8zr_tQjclg_fftgJQ0YxMMkoZE_i88jEDlHyjasXsWA4Jii6gtFWbVoSjcwO3VTCXvdPU00-Rkhid-3EZ0hiPaRqoOJAWfTuShaHd8oi2Z2vnlY0XLXVMSTcL7Ue6butjI0z86m_ewlhp7UN9VwPYxpzv_OTQ2raWn0Y-0xwzD4j_6KDqw0pUmNdT-mi9KjlUm9jIE--8-jSYdA0AgELN8xtZIgZhKxomQh2lp1inDowJfyu6jR9PfDwmROqAhZvGTemz1SMJSjmGYdmJaCgPqWNVDe-9iRxyhtWcGFxuFTNflEWw6ITk7iotIPexz4haio97NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting/4",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Executive Producer",
+			"item": [
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7940e861-23c7-4087-a1f2-790f8d1e2374",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8773801b-57e7-49c7-a756-725504769aa3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "66321f63-6142-4941-8310-03823a12a87d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3cc68274-9d24-4ff9-8cf0-307903baf29b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "58f13be0-ebe4-4f44-89a2-abb2fc60fe5b",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 50,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1ac5906c-79c0-4a67-9714-bd0cd0784df1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 8,\r\n    \"movie_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "522316e3-b3eb-4c85-b98f-bf91af2dd7b5",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Incredible Hulk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies/5",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1eb98349-f9e4-4870-b365-4cd00a5e3c81",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edward Norton\",\r\n    \"age\": 100,\r\n    \"gender\": \"male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors/5",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6e76941f-912c-4007-845d-e624adc077f1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"actor_id\": 1,\r\n    \"movie_id\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting/5",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a3dbbc95-2f5b-465a-8d65-e24f067aa3fc",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/movies/4",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "25cebfcf-e0c9-492f-8a0e-e9782be51c07",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/actors/5",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"actors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/casting",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c443d46c-0185-4822-9c30-35198807dc7c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9Ea3pRVVV5UlRReE9UVTVNa1pFUkRNNE5ETXhNVE0xT1VWQk5Ua3hNVVF6UmpkRVJUTkNNQSJ9.eyJpc3MiOiJodHRwczovL2Rldi1oZXVyaXN0aWMuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlNTQzNzEwYjIzOTQzMTAxYTdjYWMyMiIsImF1ZCI6ImFnZW5jeSIsImlhdCI6MTU4ODc0Mzc2MiwiZXhwIjoxNTg4NzUwOTYyLCJhenAiOiJ4N3ZYdzBZY1Z1a3VqeHRyZk9oblQzWTA0cnFaRENUaSIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmFjdG9ycyIsImRlbGV0ZTpjYXN0aW5nIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6Y2FzdGluZyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDpjYXN0aW5nIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0OmNhc3RpbmciLCJwb3N0Om1vdmllcyJdfQ.gUltlbwM4wxes4ZcB5Zu4DmxYqzrw_wGm2xtM-KbeglDLcImYI8Lk0gOEtOUOSrhljDxX4SbuyNN80AbV924yMRfTH6TDgmzF7s_MosWDtbUFEW0Tqp12lLEJ1nS2520Z8I1tP6eUlFLXGdH4ZOy_XMYebPGlBDfNtSUFZrmrgqnR9cszuSGWJxsTVsVgQjSeH-Fta9mcn4V9d-rbR1YbcbdihDS-kCiyuzvAuNg7a91nHITd-b8q0SLLPTycT7ZfaK1_gMBOLxfW_H8cF5FlcPjgxnWkDbwoKdF8Mh2zhbibly6D0B30YT5ajvLhxN6DqSqHFhiQMtn6NxNKWvSKQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://casting-agency-2020.herokuapp.com/casting/6",
+							"protocol": "https",
+							"host": [
+								"casting-agency-2020",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"casting",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "de38e368-9401-45a7-98d1-9c56257c8576",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3c6b3dbf-3665-4d59-9093-78be8213d670",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
