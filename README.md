@@ -1,5 +1,8 @@
 # Capstone Casting Agency Project
 
+## Motivation for project
+
+
 ## Heroku Link
 https://casting-agency-2020.herokuapp.com/
 
@@ -53,7 +56,7 @@ The `--reload` flag will detect file changes and restart the server automaticall
 ## Casting Agency Specification
 The Casting Agency models a company that is responsible for creating movies and managing and assigning actors to those movies. You are an Executive Producer within the company and are creating a system to simplify and streamline your process.
 
-### Models
+### Data Models
 - Movie with attributes title and release date
 - Actor with attributes name, age and gender
 - Casting with attributes actor_id and movie_id
@@ -450,7 +453,7 @@ The API will return seven error types when requests fail:
 
 - Database on heroku can be recreated by the following steps.
     - Run `heroku pg:psql`
-    - Execute `TRUNCATE "Casting";`, `TRUNCATE "Movies";`, and `TRUNCATE "Actor"`
+    - Execute `TRUNCATE "Casting";`, `TRUNCATE "Movies" CASCADE;`, and `TRUNCATE "Actor" CASCADE;`
     - Exit heroku psql
     - Import data with `heroku pg:psql --app casting-agency-2020 postgresql-triangular-64018 < data.dump`
 
@@ -459,4 +462,6 @@ The API will return seven error types when requests fail:
     - Run `CREATE DATABASE agency_test;` to create a database for test.
     - Import data and database schema with `psql -U postgres agency_test < db.dump`
     
-- Test the endpoints by running `py test_app.py`
+- Test the endpoints by running `test_app.py`
+    - Execute `source setup.sh`
+    - Execute `py test_app.py`
