@@ -461,6 +461,10 @@ The API will return seven error types when requests fail:
 - Database on local can be created by the following steps.
     - Run `CREATE DATABASE agency_test;` to create a database for test.
     - Import data and database schema with `psql -U postgres agency_test < db.dump`
+
+- Database on local can be recreated by the following steps.
+    - Execute `TRUNCATE "Casting";`, `TRUNCATE "Movies" CASCADE;`, and `TRUNCATE "Actor" CASCADE;`
+    - Import data and database schema with `psql -U postgres agency_test < data.dump`
     
 - Test the endpoints by running `test_app.py`
     - Execute `source setup.sh`
