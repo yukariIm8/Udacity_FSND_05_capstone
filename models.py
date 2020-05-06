@@ -35,7 +35,7 @@ class Movie(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(120), nullable=False)
-    release_date = db.Column(db.Date, nullable=False)
+    release_date = db.Column(db.Date)
     casting = db.relationship('Casting',
                               backref=db.backref('Movie', lazy=True))
 
