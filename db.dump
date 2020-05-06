@@ -98,7 +98,7 @@ ALTER SEQUENCE public."Casting_id_seq" OWNED BY public."Casting".id;
 CREATE TABLE public."Movie" (
     id integer NOT NULL,
     title character varying(120) NOT NULL,
-    release_date date NOT NULL
+    release_date date
 );
 
 
@@ -165,8 +165,8 @@ ALTER TABLE ONLY public."Movie" ALTER COLUMN id SET DEFAULT nextval('public."Mov
 COPY public."Actor" (id, name, age, gender) FROM stdin;
 1	Chadwick Boseman	42	male
 2	Tom Holland	23	male
-4	Robert Downey Jr.	55	male
-3	Scarlett Johansson	35	female
+3	Robert Downey Jr.	55	male
+4	Scarlett Johansson	35	female
 5	Brie Larson	30	female
 6	Gwyneth Paltrow	47	female
 7	Jon Favreau	53	male
@@ -183,9 +183,9 @@ COPY public."Casting" (id, actor_id, movie_id) FROM stdin;
 3	3	3
 4	4	3
 5	5	4
-6	6	5
-7	7	5
-8	4	5
+6	6	3
+7	6	5
+8	7	5
 \.
 
 
@@ -207,7 +207,7 @@ COPY public."Movie" (id, title, release_date) FROM stdin;
 --
 
 COPY public.alembic_version (version_num) FROM stdin;
-a22b1ac53a4e
+0ed757ac4825
 \.
 
 
