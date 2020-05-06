@@ -5,6 +5,7 @@ from flask_cors import CORS
 from models import setup_db, Movie, Actor, Casting, db
 from auth import AuthError, requires_auth
 
+
 def create_app(test_config=None):
     """Create and configure the app."""
     app = Flask(__name__)
@@ -52,7 +53,7 @@ def create_app(test_config=None):
 
             new_movie = Movie(title=title, release_date=release_date)
             new_movie.insert()
-        except:
+        except Exception:
             db.session.rollback()
             abort(422)
         finally:
@@ -79,7 +80,7 @@ def create_app(test_config=None):
             movie.title = title
             movie.release_date = release_date
             movie.update()
-        except:
+        except Exception:
             db.session.rollback()
             abort(422)
         finally:
@@ -100,7 +101,7 @@ def create_app(test_config=None):
 
         try:
             movie.delete()
-        except:
+        except Exception:
             db.session.rollback()
             abort(422)
         finally:
@@ -144,7 +145,7 @@ def create_app(test_config=None):
 
             new_actor = Actor(name=name, age=age, gender=gender)
             new_actor.insert()
-        except:
+        except Exception:
             db.session.rollback()
             abort(422)
         finally:
@@ -173,7 +174,7 @@ def create_app(test_config=None):
             actor.gender = gender
             actor.age = age
             actor.update()
-        except:
+        except Exception:
             db.session.rollback()
             abort(422)
         finally:
@@ -194,7 +195,7 @@ def create_app(test_config=None):
 
         try:
             actor.delete()
-        except:
+        except Exception:
             db.session.rollback()
             abort(422)
         finally:
@@ -237,7 +238,7 @@ def create_app(test_config=None):
 
             new_casting = Casting(actor_id=actor_id, movie_id=movie_id)
             new_casting.insert()
-        except:
+        except Exception:
             db.session.rollback()
             abort(422)
         finally:
@@ -264,7 +265,7 @@ def create_app(test_config=None):
             casting.actor_id = actor_id
             casting.movie_id = movie_id
             casting.update()
-        except:
+        except Exception:
             db.session.rollback()
             abort(422)
         finally:
@@ -285,7 +286,7 @@ def create_app(test_config=None):
 
         try:
             casting.delete()
-        except:
+        except Exception:
             db.session.rollback()
             abort(422)
         finally:
@@ -346,7 +347,9 @@ def create_app(test_config=None):
 
     return app
 
+
 app = create_app()
+
 
 if __name__ == '__main__':
     app.run()

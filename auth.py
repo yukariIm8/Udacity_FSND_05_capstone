@@ -48,6 +48,7 @@ def get_token_auth_header():
     token = parts[1]
     return token
 
+
 def check_permissions(permission, payload):
     """Check permission in JWT payload."""
     if 'permissions' not in payload:
@@ -62,6 +63,7 @@ def check_permissions(permission, payload):
             'description': 'Permission not found.'
         }, 401)
     return True
+
 
 def verify_decode_jwt(token):
     """Verify and decode the JWT using the Auth0 secret."""
@@ -117,6 +119,7 @@ def verify_decode_jwt(token):
                 'code': 'invalid_header',
                 'description': 'Unable to find the appropriate key.'
     }, 400)
+
 
 def requires_auth(permission=''):
     """A decorater for authentication."""
